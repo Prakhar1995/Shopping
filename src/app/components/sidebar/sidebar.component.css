@@ -1,0 +1,60 @@
+:host { display: block;
+flex:none;
+width:25vw; } 
+
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+   
+    
+}
+.items >li> h3{
+    cursor: pointer;
+    position: relative;
+}
+li{
+    list-style-type: none;
+    width: 50%;
+    /* text-align: center; */
+    /* padding-left: 50%; */
+}
+.items * h3::before{
+    width: 0px;
+}
+.items * h3:hover::before{
+    animation-name: change2;
+    animation-duration: 500ms;
+    
+    width: 52px;
+    left: -64px;
+    height: 3px;
+    top: 50%;
+    background-color: #fbb710;
+    z-index: 10;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    
+}
+.items h3:hover {
+    animation-name: change;
+    animation-duration: 1s;
+}
+
+@keyframes change {
+    from {color: black;}
+    to {color: yellow;}
+  }
+  @keyframes change2 {
+    from {width:0px;}
+    to {width: 52px;}
+  }
